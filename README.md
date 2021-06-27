@@ -4,7 +4,7 @@ Command line in-memory core functionality of a Simplistic Marketplace
 ### Run
 #### Option 1: Download the binary
 1. Download the [binary](https://github.com/akshatvn/marketPlace/blob/main/marketPlace)
-2. execute it 
+2. Execute it
 ```shell script
 ./marketPlace
 ```
