@@ -66,6 +66,9 @@ func GetTopCategory(args ...string) error {
 			maxCategory = c
 		}
 	}
+	if maxCategory == nil || maxCategory.numListings == 0 {
+		return errors.New("Error - no listings found")
+	}
 	fmt.Println(maxCategory.name)
 	return nil
 }

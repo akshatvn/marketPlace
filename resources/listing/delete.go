@@ -2,6 +2,7 @@ package listing
 
 import (
 	"errors"
+	"fmt"
 	"github.com/akshatvn/marketPlace/resources/category"
 	"github.com/akshatvn/marketPlace/resources/user"
 	"strings"
@@ -22,5 +23,6 @@ func Delete(args ...string) error {
 	}
 	delete(listingsByID, l.id)
 	category.UpdateHeap(l.categoryName, false)
+	fmt.Println("Success")
 	return nil
 }

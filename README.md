@@ -43,13 +43,13 @@ EXIT
 Success
 
 # CREATE_LISTING user1 'Phone model 8' 'Black color, brand new' 1000 'Electronics'
-100001
+o68xxpk4qs
 
-# GET_LISTING user1 100001
-Phone model 8|Black color, brand new|1000|2019-02-22 12:34:56|Electronics|user1
+# GET_LISTING user1 o68xxpk4qs
+Phone model 8|Black color, brand new|1000.00|2021-06-27T21:53:47+08:00|Electronics|user1
 
 # CREATE_LISTING user1 'Black shoes' 'Training shoes' 100 'Sports'
-100002
+o6bpmuuzg2
 
 # REGISTER user2
 Success
@@ -58,29 +58,30 @@ Success
 Error - user already existing
 
 # CREATE_LISTING user2 'T-shirt' 'White color' 20 'Sports'
-100003
+o6dbsd95zd
 
-# GET_LISTING user1 100003
-T-shirt|White color|20|2019-02-22 12:34:58|Sports|user2
+# GET_LISTING user1 o6dbsd95zd
+T-shirt|White color|20.00|2021-06-27T21:54:37+08:00|Sports|user2
 
 # GET_CATEGORY user1 'Fashion' sort_time asc
 Error - category not found
 
 # GET_CATEGORY user1 'Sports' sort_time dsc
-T-shirt|White color|20|2019-02-22 12:34:58|Sports|user2
-Black shoes|Training shoes|100|2019-02-22 12:34:57|Sports|user1
+T-shirt|White color|20.00|2021-06-27T21:54:37+08:00|Sports|user2
+Black shoes|Training shoes|100.00|2021-06-27T21:54:15+08:00|Sports|user1
+
 
 # GET_CATEGORY user1 'Sports' sort_price dsc
-Black shoes|Training shoes|100|2019-02-22 12:34:57|Sports|user1
-T-shirt|White color|20|2019-02-22 12:34:58|Sports|user2
+Black shoes|Training shoes|100.00|2021-06-27T21:54:15+08:00|Sports|user1
+T-shirt|White color|20.00|2021-06-27T21:54:37+08:00|Sports|user2
 
 # GET_TOP_CATEGORY user1
 Sports
 
-# DELETE_LISTING user1 100003
+# DELETE_LISTING user1 o6dbsd95zd
 Error - listing owner mismatch
 
-# DELETE_LISTING user2 100003
+# DELETE_LISTING user2 o6dbsd95zd
 Success
 
 # GET_TOP_CATEGORY user2

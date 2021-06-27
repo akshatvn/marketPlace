@@ -33,7 +33,7 @@ func GetAllByCategory(args ...string) error {
 	}
 	if len(args) >= 4 {
 		sortBy, sortDir = strings.ToLower(args[2]), strings.ToLower(args[3])
-		if sortDir != "asc" && sortDir != "desc" {
+		if sortDir != "asc" && sortDir != "dsc" {
 			fmt.Println("unknown sort direction, ignoring sort")
 		} else if sortBy == "sort_price" {
 			if sortDir == "asc" {
