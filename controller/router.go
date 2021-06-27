@@ -14,6 +14,10 @@ import (
 
 // ProcessInput takes a line of input and processes it
 func ProcessInput(text string) {
+	text = strings.TrimSpace(text)
+	if len(text) == 0 {
+		return
+	}
 	inputStrs := splitIntoArgs(text)
 	action := strings.ToUpper(inputStrs[0])
 	args := inputStrs[1:]
@@ -31,7 +35,7 @@ func ProcessInput(text string) {
 // strings. The first element of the slice is the command, and
 // the following elements are its arguments
 func splitIntoArgs(text string) []string {
-	text = strings.TrimSpace(text)
+
 	// FOR SIMPLICITY OF REGEX, QUOTES INSIDE AN ARGUMENT ARE NOT HANDLED.
 	r := regexp.MustCompile(`[^\s"']+|"([^"]*)"|'([^']*)'`)
 	ans :=  r.FindAllString(text, -1 )
